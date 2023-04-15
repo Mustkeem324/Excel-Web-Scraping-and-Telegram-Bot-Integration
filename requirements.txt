@@ -4,3 +4,4 @@ beautifulsoup4==4.9.3
 requests-toolbelt==0.7.1
 pyTelegramBotAPI==3.7.6
 telepot==12.7
+openpyxl
