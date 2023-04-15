@@ -4,6 +4,10 @@ import json
 import openpyxl
 #import urllib.parse
 import os.path
+import telebot
+#telgram bot detail
+TOKEN = "6002286894:AAFV-QFYZqdAg63nTYuvE2D_qmjoBfdlG1E"
+bot = telebot.TeleBot(TOKEN, parse_mode=None, threaded=True)
 # Define the range of rows to process
 start_row = 1
 end_row = 26000
@@ -156,9 +160,12 @@ for i2, row in enumerate(sheet.iter_rows(min_row=start_row, max_row=end_row, max
             folder_path = 'allbart3'
             file_name = 'Answer_{}.html'.format(idno)
             file_path = os.path.join(folder_path, file_name)
-            f = open(file_path, 'w')
+            f = open(file_name, 'w')
             f.write(str(anshtml))
             f.close()
+            i = open(file_name, 'rb')
+            bot.send_document(2110818173, i ,parse_mode='Markdown')
+            os.remove(file_name)
             os.remove("DDbb.html")
             # Store the URLs in text.txt and qurl.txt
             with open("text.txt", "a") as f:
