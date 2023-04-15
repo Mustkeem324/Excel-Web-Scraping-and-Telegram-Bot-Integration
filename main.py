@@ -183,6 +183,6 @@ for i2, row in enumerate(sheet.iter_rows(min_row=start_row, max_row=end_row, max
         print(f"Error processing row {i2}: {e}")
         with open("error2.txt", "a") as f:
             f.write(str(url) + "\n")
-        with open("error_qurl.txt", "a") as f:
-            f.write(str(qurl) + "\n")
+        #with open("error_qurl.txt", "a") as f:
+            #f.write(str(qurl) + "\n")
         continue
