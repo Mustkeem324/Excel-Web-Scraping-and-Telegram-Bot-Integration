@@ -9,8 +9,8 @@ import telebot
 TOKEN = "6002286894:AAFV-QFYZqdAg63nTYuvE2D_qmjoBfdlG1E"
 bot = telebot.TeleBot(TOKEN, parse_mode=None, threaded=True)
 # Define the range of rows to process
-start_row = 14998
-end_row = 200000
+start_row = 1
+end_row = 100000
 
 # Load the last processed row from a file
 try:
@@ -166,7 +166,7 @@ for i2, row in enumerate(sheet.iter_rows(min_row=start_row, max_row=end_row, max
             f.write(str(anshtml))
             f.close()
             i = open(file_name, 'rb')
-            bot.send_document(2110818173, i ,parse_mode='Markdown')
+            bot.send_document(2110818173, i,caption=str("Row:"+str(i2)) ,parse_mode='Markdown')
             os.remove(file_name)
             os.remove("DDbb.html")
             # Store the URLs in text.txt and qurl.txt
