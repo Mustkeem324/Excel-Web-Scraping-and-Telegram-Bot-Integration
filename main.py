@@ -6,7 +6,7 @@ import openpyxl
 import os.path
 import telebot
 #telgram bot detail
-TOKEN = "6002286894:AAFV-QFYZqdAg63nTYuvE2D_qmjoBfdlG1E"
+TOKEN = "6002286894:AAEB3FK-M41QnPxSzPdjN-0biGV16UsBMb8"
 bot = telebot.TeleBot(TOKEN, parse_mode=None, threaded=True)
 # Define the range of rows to process
 start_row = 1
