@@ -10,7 +10,7 @@ TOKEN = "6002286894:AAFV-QFYZqdAg63nTYuvE2D_qmjoBfdlG1E"
 bot = telebot.TeleBot(TOKEN, parse_mode=None, threaded=True)
 # Define the range of rows to process
 start_row = 1
-end_row = 100000
+end_row = 75000
 
 # Load the last processed row from a file
 try:
@@ -20,7 +20,7 @@ except FileNotFoundError:
     last_processed_row = start_row
 
 # Load the Excel spreadsheet
-wb = openpyxl.load_workbook('193198.xlsx')
+wb = openpyxl.load_workbook('68894.xlsx')
 print(wb.sheetnames)
 sheet = wb['Sheet1']
 
