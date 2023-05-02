@@ -186,7 +186,12 @@ for i2, row in enumerate(sheet.iter_rows(min_row=start_row, max_row=end_row, max
         with open("error2.txt", "a") as f:
             f.write(str(url) + "\n")
             i = open("error2.txt", 'rb')
-            bot.send_document(-1001534695986, i ,parse_mode='Markdown')
+            try:
+                bot.send_document(-1001534695986, i ,parse_mode='Markdown')
+                print(f"Bot Send error file!")
+            except Exception as e:
+                print(f"Error processing row : {e}")
+                continue
         #with open("error_qurl.txt", "a") as f:
             #f.write(str(qurl) + "\n")
         continue
