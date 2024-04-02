@@ -7,8 +7,8 @@ telepot
 openpyxl
 requests
 Jinja2
-gunicorn==19.0.0
-pytest-shutil==1.7.0
-python-dateutil==2.8.2
-urllib3==1.26.5
-certifi==2021.5.30
+gunicorn
+pytest-shutil
+python-dateutil
+urllib3
+certifi
